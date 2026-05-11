@@ -35,10 +35,12 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -75,9 +77,16 @@
             }
         }
 
-        /* Smooth transitions */
-        a, button {
-            transition: all 0.3s ease;
+        /* Prevent horizontal scrolling */
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Ensure containers don't overflow */
+        .max-w-7xl {
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         /* Custom scrollbar */

@@ -40,7 +40,7 @@
             <!-- Right Side CTA & Mobile Menu -->
             <div class="flex items-center space-x-4">
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden inline-flex p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition" id="mobileMenuBtn">
+                <button class="sm:hidden inline-flex p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition" id="mobileMenuBtn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -49,7 +49,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <nav class="md:hidden hidden pb-6 border-t border-gray-100" id="mobileMenu">
+        <nav class="sm:hidden hidden pb-6 border-t border-gray-100" id="mobileMenu">
             <div class="space-y-2 pt-4">
                 <a href="#home" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
                     🏠 Home
