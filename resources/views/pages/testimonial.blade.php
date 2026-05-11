@@ -41,14 +41,16 @@
 }
 </style>
 
+@php use App\Services\PageContentManager; @endphp
+
 <div class="max-w-7xl mx-auto px-6">
 
 <div class="text-center mb-16">
     <h2 class="text-4xl font-bold mb-4">
-        Apa Kata Klien NusaNext?
+        {{ PageContentManager::get('testimonial', 'testimonial_heading') }}
     </h2>
     <p class="text-gray-600">
-        Kepercayaan mereka adalah prioritas kami
+        {{ PageContentManager::get('testimonial', 'testimonial_description') }}
     </p>
 </div>
 

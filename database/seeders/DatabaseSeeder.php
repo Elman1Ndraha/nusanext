@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'agusraha66@gmail.com',
         ]);
+
+        // Jalankan seeder untuk admin user
+        $this->call(AdminUserSeeder::class);
     }
 }

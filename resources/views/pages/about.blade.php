@@ -1,50 +1,59 @@
+@php use App\Services\PageContentManager; @endphp
+
 <!-- ABOUT Section -->
-<section id="about" class="py-20 bg-white">
+<section id="about" class="py-8 md:py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
-        <div class="text-center mb-16 scroll-fade">
-            <h2 class="font-display text-red-800 font-bold text-4xl md:text-5xl mb-4">Tentang Kami</h2>
+        <div class="text-center mb-12 scroll-fade">
+            <h2 class="font-display text-red-800 font-bold text-4xl md:text-5xl mb-4">{{ PageContentManager::get('about', 'about_heading') }}</h2>
             <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-teal-600 mx-auto"></div>
         </div>
         
         <!-- Main Content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
             <!-- Image -->
             <div class="scroll-fade">
                 <div class="relative">
                     <div class="absolute inset-0 bg-linear-to-br from-blue-300 to-teal-300 rounded-2xl transform rotate-3 opacity-20"></div>
-                    <div class="relative bg-linear-to-br from-gray-100 to-gray-50 rounded-2xl p-12 text-center">
-                        <div class="text-8xl mb-6">👥</div>
-                        <p class="text-gray-600 font-semibold">Tim Profesional & Berpengalaman</p>
-                    </div>
+                    @php $aboutImage = PageContentManager::get('about', 'about_image'); @endphp
+                    @if($aboutImage)
+                        <div class="relative rounded-2xl overflow-hidden shadow-lg min-h-[320px]">
+                            <img src="{{ asset('storage/' . $aboutImage) }}" alt="About Image" class="w-full h-full object-cover" />
+                        </div>
+                    @else
+                        <div class="relative bg-linear-to-br from-gray-100 to-gray-50 rounded-2xl p-12 text-center">
+                            <div class="text-8xl mb-6">👥</div>
+                            <p class="text-gray-600 font-semibold">Tim Profesional & Berpengalaman</p>
+                        </div>
+                    @endif
                 </div>
             </div>
             
             <!-- Content -->
             <div class="scroll-fade">
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                    NusaNext adalah perusahaan yang berfokus pada transformasi digital dan pengembangan solusi inovatif. Dengan tim yang terdiri dari profesional berpengalaman, kami telah membantu ratusan perusahaan mencapai tujuan bisnis mereka.
+                    {{ PageContentManager::get('about', 'about_paragraph_1') }}
                 </p>
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                    Kami percaya bahwa teknologi seharusnya membuat hidup lebih mudah, bukan lebih rumit. Oleh karena itu, kami selalu fokus pada user experience dan memberikan solusi yang intuitif serta efektif.
+                    {{ PageContentManager::get('about', 'about_paragraph_2') }}
                 </p>
                 <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    Visi kami adalah menjadi partner terpercaya dalam transformasi digital bisnis Anda, sementara misi kami adalah memberikan solusi berkualitas tinggi yang menghasilkan ROI maksimal.
+                    {{ PageContentManager::get('about', 'about_paragraph_3') }}
                 </p>
                 
                 <!-- Stats -->
                 <div class="grid grid-cols-3 gap-6">
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600">500+</div>
-                        <p class="text-gray-600 text-sm mt-2">Proyek Selesai</p>
+                        <div class="text-3xl font-bold text-blue-600">{{ PageContentManager::get('about', 'about_stat_1_value') }}</div>
+                        <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_1_label') }}</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-teal-600">50+</div>
-                        <p class="text-gray-600 text-sm mt-2">Tim Ahli</p>
+                        <div class="text-3xl font-bold text-teal-600">{{ PageContentManager::get('about', 'about_stat_2_value') }}</div>
+                        <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_2_label') }}</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-blue-600">5+</div>
-                        <p class="text-gray-600 text-sm mt-2">Tahun Pengalaman</p>
+                        <div class="text-3xl font-bold text-blue-600">{{ PageContentManager::get('about', 'about_stat_3_value') }}</div>
+                        <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_3_label') }}</p>
                     </div>
                 </div>
             </div>

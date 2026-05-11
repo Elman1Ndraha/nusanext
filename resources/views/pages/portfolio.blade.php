@@ -1,10 +1,12 @@
+@php use App\Services\PageContentManager; @endphp
+
 <!-- PORTFOLIO Section -->
 <section id="portfolio" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16 scroll-fade">
-            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Portfolio Kami</h2>
-            <p class="text-gray-600 text-lg">Lihat contoh project dan website yang telah kami buat</p>
+            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">{{ PageContentManager::get('portfolio', 'portfolio_heading') }}</h2>
+            <p class="text-gray-600 text-lg">{{ PageContentManager::get('portfolio', 'portfolio_description') }}</p>
         </div>
 
         <!-- Filter Buttons -->
@@ -33,8 +35,8 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">Company Website</h3>
-                    <p class="text-gray-600 text-sm mb-4">Website perusahaan modern dengan design yang elegan dan responsive.</p>
+                    <h3 class="font-bold text-xl mb-2">{{ PageContentManager::get('portfolio', 'portfolio_item_1_title') }}</h3>
+                    <p class="text-gray-600 text-sm mb-4">{{ PageContentManager::get('portfolio', 'portfolio_item_1_description') }}</p>
                     <div class="flex gap-2 mb-4">
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">HTML</span>
                         <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-semibold">CSS</span>
@@ -54,8 +56,8 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">E-Commerce Store</h3>
-                    <p class="text-gray-600 text-sm mb-4">Platform e-commerce lengkap dengan sistem pembayaran dan inventory management.</p>
+                    <h3 class="font-bold text-xl mb-2">{{ PageContentManager::get('portfolio', 'portfolio_item_2_title') }}</h3>
+                    <p class="text-gray-600 text-sm mb-4">{{ PageContentManager::get('portfolio', 'portfolio_item_2_description') }}</p>
                     <div class="flex gap-2 mb-4">
                         <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Laravel</span>
                         <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold">MySQL</span>
@@ -96,8 +98,8 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">Blog Platform</h3>
-                    <p class="text-gray-600 text-sm mb-4">Platform blog dengan CMS terintegrasi untuk manajemen konten yang mudah.</p>
+                    <h3 class="font-bold text-xl mb-2">{{ PageContentManager::get('portfolio', 'portfolio_item_4_title') }}</h3>
+                    <p class="text-gray-600 text-sm mb-4">{{ PageContentManager::get('portfolio', 'portfolio_item_4_description') }}</p>
                     <div class="flex gap-2 mb-4">
                         <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Laravel</span>
                         <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Vue.js</span>
@@ -117,8 +119,8 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">SaaS Platform</h3>
-                    <p class="text-gray-600 text-sm mb-4">Platform SaaS dengan fitur subscription dan analytics dashboard yang powerful.</p>
+                    <h3 class="font-bold text-xl mb-2">{{ PageContentManager::get('portfolio', 'portfolio_item_5_title') }}</h3>
+                    <p class="text-gray-600 text-sm mb-4">{{ PageContentManager::get('portfolio', 'portfolio_item_5_description') }}</p>
                     <div class="flex gap-2 mb-4">
                         <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">Node.js</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">React</span>
