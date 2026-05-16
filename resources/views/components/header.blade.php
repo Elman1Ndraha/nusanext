@@ -2,7 +2,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <!-- Logo & Brand -->
-            <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition group">
+            <nav>
+                <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition group">
+                    <img src="{{ asset('images/logo_n.png') }}" alt="nusanext logo" class="w-12 h-12 rounded-lg shadow-md">
+                    <div class="block">
+                        <h1 class="font-display gap-3 items-center font-bold text-lg" style="background: linear-gradient(to right, #35a003, #35a003); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            nusanext
+                        </h1>
+                    </div>
+                </a>
+            </nav>
+            {{-- <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition group">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all transform group-hover:scale-105">
                     <span class="text-red font-bold text-lg">nX</span>
                 </div>
@@ -11,7 +21,7 @@
                         nusanext
                     </h1>
                 </div>
-            </a>
+            </a> --}}
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-1">
