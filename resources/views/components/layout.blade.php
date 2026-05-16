@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'nusanext')</title>
-    <link rel="icon" type="image/png" href="{{ asset('images/logon.png') }}">
+    <link rel="icon" type="images/png" href="{{ asset('/favicon.ico') }}">
     @vite('resources/css/app.css')
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
