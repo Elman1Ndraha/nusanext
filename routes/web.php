@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController; // Import HomeController
 use App\Http\Controllers\AdminController; // Import AdminController
 use App\Http\Controllers\AdminPageController; // Import AdminPageController
 use App\Http\Controllers\AuthController; // Import AuthController
 
 // Halaman-halaman utama
-Route::view('/', 'index')->name('index');
-Route::view('/about', 'about')->name('about');
-Route::view('/portfolio', 'portfolio')->name('portfolio');
-Route::view('/testimonial', 'testimonial')->name('testimonial');
-Route::view('/contact', 'contact')->name('contact');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 // Routes untuk autentikasi
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Form login

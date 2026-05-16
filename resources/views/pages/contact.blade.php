@@ -5,8 +5,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16 scroll-fade">
-            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">{{ PageContentManager::get('contact', 'contact_heading') }}</h2>
-            <p class="text-gray-600 text-lg">{{ PageContentManager::get('contact', 'contact_description') }}</p>
+            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Hubungi Kami</h2>
+            <p class="text-gray-600 text-lg">Kami siap mendengarkan kebutuhan bisnis Anda</p>
             <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-teal-600 mx-auto mt-6"></div>
         </div>
         

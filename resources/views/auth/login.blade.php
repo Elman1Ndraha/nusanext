@@ -35,7 +35,7 @@
 
         {{-- Link kembali ke halaman utama --}}
         <div class="mt-4 text-center">
-            <a href="{{ route('index') }}" class="text-blue-500 hover:text-blue-700">Kembali ke Halaman Utama</a>
+            <a href="{{ route('home') }}" class="text-blue-500 hover:text-blue-700">Kembali ke Halaman Utama</a>
         </div>
     </div>
 </div>

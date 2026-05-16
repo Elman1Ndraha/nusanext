@@ -1,5 +1,6 @@
-<section id="testimonial" class="py-20 bg-gray-25 overflow-hidden">
+<section id="testimonial" class="py-20 bg-gray-25">
 
+        
 <style>
 @keyframes slideLeft {
     0% { transform: translateX(0); }
@@ -46,10 +47,11 @@
 <div class="max-w-7xl mx-auto px-6">
 
 <div class="text-center mb-16">
-    <h2 class="text-4xl font-bold mb-4">
-        {{ PageContentManager::get('testimonial', 'testimonial_heading') }}
+    <h2 class="text-4xl font-bold mb-4 text-red-800">
+        Apa Kata Klien NusaNext?
     </h2>
     <p class="text-gray-600">
+        Kepercayaan mereka adalah prioritas kami
         {{ PageContentManager::get('testimonial', 'testimonial_description') }}
     </p>
 </div>

@@ -33,7 +33,7 @@
                 Logout
             </button>
         </form>
-        <a href="{{ route('index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <a href="{{ route('home') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Kembali ke Halaman Utama
         </a>
     </div>

@@ -1,6 +1,6 @@
 @extends('components.layout')
 
-@section('title', 'nusaNext')
+@section('title', 'nusanext')
 
 @section('content')
 <!-- Include semua sections -->
