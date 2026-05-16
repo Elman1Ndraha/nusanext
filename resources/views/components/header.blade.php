@@ -4,7 +4,7 @@
             <!-- Logo & Brand -->
             <nav>
                 <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition group">
-                    <img src="{{ asset('images/logo_n.png') }}" alt="nusanext logo" class="w-12 h-12 rounded-lg shadow-md">
+                    <img src="{{ asset('images/logon.png') }}" alt="nusanext logo" class="w-12 h-12 rounded-lg shadow-md">
                     <div class="block">
                         <h1 class="font-display gap-3 items-center font-bold text-lg" style="background: linear-gradient(to right, #35a003, #35a003); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
                             nusanext
