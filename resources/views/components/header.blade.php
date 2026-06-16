@@ -12,39 +12,78 @@
                     </div>
                 </a>
             </nav>
-            {{-- <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition group">
-                <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all transform group-hover:scale-105">
-                    <span class="text-red font-bold text-lg">nX</span>
-                </div>
-                <div class="hidden sm:block">
-                    <h1 class="font-display items-center font-bold text-lg" style="background: linear-gradient(to right, #35a003, #35a003); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                        nusanext
-                    </h1>
-                </div>
-            </a> --}}
+            
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-1">
                 <a href="{{ route ('home') }}" class="nav-link group px-4 py-2 rounded-lg font-medium text-gray-700 relative transition-all duration-300 hover:text-red-600 active">
-                    <span class="relative z-10">Home</span>
+                    <span class="relative z-10">Beranda</span>
                     <span class="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-left"></span>
                 </a>
                 <a href="{{ route('about') }}" class="nav-link group px-4 py-2 rounded-lg font-medium text-gray-700 relative transition-all duration-300 hover:text-red-600">
-                    <span class="relative z-10">About</span>
+                    <span class="relative z-10">Tentang Kami</span>
                     <span class="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-left"></span>
                 </a>
-                <a href="{{ route('portfolio') }}" class="nav-link group px-4 py-2 rounded-lg font-medium text-gray-700 relative transition-all duration-300 hover:text-red-600">
-                    <span class="relative z-10">Pelanggan</span>
-                    <span class="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-left"></span>
+              
+
+    <div class="relative" id="programMenuWrapper">
+        <button
+            id="programBtn"
+            aria-expanded="false"
+            class="flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-gray-700 hover:text-red-600 transition-all duration-300">
+
+            <span>Program</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                id="programChevron"
+                class="w-4 h-4 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+
+                <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+
+        <!-- Dropdown (alert-like) -->
+        <div
+            id="programDropdown"
+            role="menu"
+            aria-hidden="true"
+            class="absolute left-0 top-full mt-2 w-56 rounded-xl shadow-xl z-60 transform scale-95 opacity-0 pointer-events-none transition-all duration-150">
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-900 rounded-xl overflow-hidden">
+                <a href="{{ route('kursus') }}"
+                    class="block px-4 py-3 hover:bg-yellow-100">
+                    Kursus Online
                 </a>
+
+                <a href="{{ route('bootcamp') }}"
+                    class="block px-4 py-3 hover:bg-yellow-100">
+                    Bootcamp
+                </a>
+
+                <a href="{{ route('portfolio') }}"
+                    class="block px-4 py-3 hover:bg-yellow-100 border-t border-yellow-100">
+                    Lihat Portfolio
+                </a>
+            </div>
+
+        </div>
+    </div>
                 <a href="{{ route('testimonial') }}" class="nav-link group px-4 py-2 rounded-lg font-medium text-gray-700 relative transition-all duration-300 hover:text-red-600">
                     <span class="relative z-10">Testimonial</span>
                     <span class="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-left"></span>
                 </a>
                 <a href="{{ route('contact') }}" class="nav-link group px-4 py-2 rounded-lg font-medium text-gray-700 relative transition-all duration-300 hover:text-red-600">
-                    <span class="relative z-10">Contact</span>
+                    <span class="relative z-10">Kontak</span>
                     <span class="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-left"></span>
                 </a>
+
+
             </nav>
 
             <!-- Right Side CTA & Mobile Menu -->
@@ -61,20 +100,28 @@
         <!-- Mobile Menu -->
         <nav class="sm:hidden hidden pb-6 border-t border-gray-100" id="mobileMenu">
             <div class="space-y-2 pt-4">
-                <a href="{{ route('home') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
-                    Home
+                <a href="{{ route('home') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-red-600 transition">
+                    Beranda
                 </a>
-                <a href="{{ route('about') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
-                    About
+                <a href="{{ route('about') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-red-600 transition">
+                    Tentang Kami
                 </a>
-                <a href="{{ route('portfolio') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
-                    Pelanggan
-                </a>
-                <a href="{{ route('testimonial') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
+                <details class="px-4 py-3">
+                    <summary class="font-medium text-gray-700 cursor-pointer hover:text-red-600 transition">Program</summary>
+                    <div class="mt-2 space-y-2 ml-2">
+                        <a href="{{ route('kursus') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
+                            📚 Kursus Online
+                        </a>
+                        <a href="{{ route('bootcamp') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
+                            🚀 Bootcamp
+                        </a>
+                    </div>
+                </details>
+                <a href="{{ route('testimonial') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-red-600 transition">
                     Testimonial
                 </a>
-                <a href="{{ route('contact') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:hover:text-red-600 transition">
-                    Contact
+                <a href="{{ route('contact') }}" class="nav-link block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-red-600 transition">
+                    Kontak
                 </a>
             </div>
         </nav>
@@ -103,6 +150,28 @@
     .nav-link.active {
         color: #af1e1e;
     }
+
+    header {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .max-w-7xl,
+    .flex.justify-between.items-center.h-20,
+    .relative#programMenuWrapper {
+        min-width: 0;
+    }
+
+    /* Program dropdown show/hide helpers */
+    #programDropdown {
+        transform-origin: top left;
+    }
+
+    #programDropdown.show {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: scale(1) !important;
+    }
 </style>
 
 <script>
@@ -122,6 +191,45 @@
             mobileMenu?.classList.add('hidden');
         }
     });
+
+    // Program dropdown: toggle on click, close on outside click or Escape
+    const programBtn = document.getElementById('programBtn');
+    const programDropdown = document.getElementById('programDropdown');
+    const programChevron = document.getElementById('programChevron');
+
+    function openProgramDropdown() {
+        programDropdown.classList.add('show');
+        programBtn.setAttribute('aria-expanded', 'true');
+        programChevron.classList.add('rotate-180');
+    }
+
+    function closeProgramDropdown() {
+        programDropdown.classList.remove('show');
+        programBtn.setAttribute('aria-expanded', 'false');
+        programChevron.classList.remove('rotate-180');
+    }
+
+    if (programBtn && programDropdown) {
+        programBtn.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            const isOpen = programDropdown.classList.contains('show');
+            if (isOpen) closeProgramDropdown(); else openProgramDropdown();
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!programBtn.contains(e.target) && !programDropdown.contains(e.target)) {
+                closeProgramDropdown();
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeProgramDropdown();
+            }
+        });
+    }
 
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");

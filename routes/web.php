@@ -5,13 +5,18 @@ use App\Http\Controllers\HomeController; // Import HomeController
 use App\Http\Controllers\AdminController; // Import AdminController
 use App\Http\Controllers\AdminPageController; // Import AdminPageController
 use App\Http\Controllers\AuthController; // Import AuthController
+use App\Http\Controllers\BootcampController; // Import BootcampController
+use App\Http\Controllers\CourseController; // Import CourseController
 
 // Halaman-halaman utama
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/program/kursus', [CourseController::class, 'index'])->name('kursus');
+Route::get('/program/bootcamp', [BootcampController::class, 'index'])->name('bootcamp');
 Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 
 // Routes untuk autentikasi
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Form login

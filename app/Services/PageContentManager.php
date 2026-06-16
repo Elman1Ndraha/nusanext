@@ -80,6 +80,32 @@ class PageContentManager
                     ['key' => 'contact_status_text', 'label' => 'Status Online', 'type' => 'text', 'default' => 'Saat ini kami online'],
                 ],
             ],
+            'bootcamp' => [
+                'label' => 'Bootcamp',
+                'fields' => [
+                    ['key' => 'bootcamp_heading', 'label' => 'Judul Bagian', 'type' => 'text', 'default' => 'Program Bootcamp Intensif'],
+                    ['key' => 'bootcamp_description', 'label' => 'Deskripsi Bagian', 'type' => 'textarea', 'rows' => 3, 'default' => 'Tingkatkan skill Anda dengan program bootcamp intensif selama 3-6 bulan. Dapatkan sertifikat dan job placement assistance setelah lulus.'],
+                    ['key' => 'bootcamp_duration', 'label' => 'Durasi Program', 'type' => 'text', 'default' => '3-6 Bulan'],
+                    ['key' => 'bootcamp_capacity', 'label' => 'Kapasitas Per Batch', 'type' => 'text', 'default' => '20 Peserta'],
+                    ['key' => 'bootcamp_benefit_1', 'label' => 'Manfaat 1', 'type' => 'text', 'default' => 'Mentor Berpengalaman'],
+                    ['key' => 'bootcamp_benefit_2', 'label' => 'Manfaat 2', 'type' => 'text', 'default' => 'Sertifikat Resmi'],
+                    ['key' => 'bootcamp_benefit_3', 'label' => 'Manfaat 3', 'type' => 'text', 'default' => 'Job Placement'],
+                    ['key' => 'bootcamp_benefit_4', 'label' => 'Manfaat 4', 'type' => 'text', 'default' => 'Portfolio Development'],
+                ],
+            ],
+            'course' => [
+                'label' => 'Kursus',
+                'fields' => [
+                    ['key' => 'course_heading', 'label' => 'Judul Bagian', 'type' => 'text', 'default' => 'Kursus Online Fleksibel'],
+                    ['key' => 'course_description', 'label' => 'Deskripsi Bagian', 'type' => 'textarea', 'rows' => 3, 'default' => 'Belajar dengan fleksibel sesuai jadwal Anda. Akses materi kapan saja, di mana saja dengan durasi course yang beragam.'],
+                    ['key' => 'course_duration', 'label' => 'Durasi Rata-rata', 'type' => 'text', 'default' => '4-8 Minggu'],
+                    ['key' => 'course_modules', 'label' => 'Jumlah Module', 'type' => 'text', 'default' => '50+ Course'],
+                    ['key' => 'course_benefit_1', 'label' => 'Manfaat 1', 'type' => 'text', 'default' => 'Akses Seumur Hidup'],
+                    ['key' => 'course_benefit_2', 'label' => 'Manfaat 2', 'type' => 'text', 'default' => 'Sertifikat Course'],
+                    ['key' => 'course_benefit_3', 'label' => 'Manfaat 3', 'type' => 'text', 'default' => 'Support Komunitas'],
+                    ['key' => 'course_benefit_4', 'label' => 'Manfaat 4', 'type' => 'text', 'default' => 'Update Konten Berkala'],
+                ],
+            ],
         ];
     }
 

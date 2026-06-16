@@ -78,13 +78,13 @@
             }
         }
 
-        /* Prevent horizontal scrolling */
-        * {
+        /* Prevent horizontal scrolling on root elements only */
+        html, body {
             max-width: 100%;
-            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
-        /* Ensure containers don't overflow */
+        /* Ensure container utility doesn't force every element to shrink */
         .max-w-7xl {
             max-width: 100%;
             overflow-x: hidden;
@@ -108,6 +108,103 @@
             background: #555;
         }
 
+        /* Linear gradient support */
+        .bg-linear-to-r {
+            background: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+
+        .from-blue-600 {
+            --tw-gradient-from: #2563eb;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(37, 99, 235, 0));
+        }
+
+        .to-teal-600 {
+            --tw-gradient-to: #0d9488;
+        }
+
+        .from-blue-400 {
+            --tw-gradient-from: #60a5fa;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(96, 165, 250, 0));
+        }
+
+        .to-blue-600 {
+            --tw-gradient-to: #2563eb;
+        }
+
+        .from-green-400 {
+            --tw-gradient-from: #4ade80;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(74, 222, 128, 0));
+        }
+
+        .to-green-600 {
+            --tw-gradient-to: #16a34a;
+        }
+
+        .from-orange-400 {
+            --tw-gradient-from: #fb923c;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(251, 146, 60, 0));
+        }
+
+        .to-orange-600 {
+            --tw-gradient-to: #ea580c;
+        }
+
+        .from-pink-400 {
+            --tw-gradient-from: #f472b6;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(244, 114, 182, 0));
+        }
+
+        .to-pink-600 {
+            --tw-gradient-to: #db2777;
+        }
+
+        .from-purple-400 {
+            --tw-gradient-from: #c084fc;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(192, 132, 252, 0));
+        }
+
+        .to-purple-600 {
+            --tw-gradient-to: #9333ea;
+        }
+
+        .from-yellow-400 {
+            --tw-gradient-from: #facc15;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(250, 204, 21, 0));
+        }
+
+        .to-yellow-600 {
+            --tw-gradient-to: #ca8a04;
+        }
+
+        .bg-linear-to-br {
+            background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+        }
+
+        .from-purple-400 {
+            --tw-gradient-from: #c084fc;
+        }
+
+        .to-pink-400 {
+            --tw-gradient-to: #f472b6;
+        }
+
+        .from-green-400 {
+            --tw-gradient-from: #4ade80;
+        }
+
+        .to-emerald-400 {
+            --tw-gradient-to: #4ade80;
+        }
+
+        /* Additional support for dynamic sections */
+        section {
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth transitions */
+        a, button {
+            transition: all 0.3s ease-in-out;
+        }
         
     </style>
 </head>
