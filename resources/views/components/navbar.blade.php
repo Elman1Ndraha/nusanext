@@ -4,14 +4,16 @@
 </nav>
 
 <style>
-    /* Adjust main content padding untuk accommodate header + navbar */
+    /* Adjust main content padding to accommodate fixed header.
+       Header height = 5rem (80px). If secondary navbar exists and is fixed,
+       increase this value accordingly. */
     main {
-        padding-top: 6rem; /* 80px (header) + 56px (navbar) = 136px */
+        padding-top: 5rem; /* 80px to avoid content under fixed header */
     }
 
     @media (max-width: 768px) {
         main {
-            padding-top: 7rem;
+            padding-top: 6rem; /* slightly larger on small screens */
         }
     }
 </style>

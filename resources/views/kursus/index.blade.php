@@ -1,3 +1,12 @@
+@extends('components.layout')
+
+@section('title', 'Harga Website - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     📚 KURSUS PAGE - ONLINE LEARNING
+     Halaman kursus online dengan daftar kategori dan deskripsi
+     ============================================================ -->
 @php use App\Services\PageContentManager; @endphp
 
 <!-- COURSE Section -->
@@ -5,11 +14,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16 scroll-fade">
-            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Kursus</h2>
-            <p class="text-gray-600 text-lg">Pelajari keterampilan baru dengan kursus online kami</p>
+            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Harga Website</h2>
+            <p class="text-gray-600 text-lg">Temukan paket kursus yang sesuai dengan kebutuhan Anda</p>
             <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-teal-600 mx-auto mt-6"></div>
         </div>
-        
+{{--         
         <!-- Course Content -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <!-- Image -->
@@ -176,4 +185,8 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+<!-- ============================================================
+     END KURSUS PAGE CONTENT
+     ============================================================ -->
+@endsection

@@ -7,10 +7,12 @@ use Illuminate\View\View;
 class BootcampController extends Controller
 {
     /**
-     * Display the bootcamp section
+     * Display the bootcamp page
+     * 🎓 Route: GET /program/bootcamp -> Halaman program bootcamp intensif
      */
     public function index(): View
     {
-        return view('index', ['section' => 'bootcamp']);
+        // ✨ Return bootcamp page standalone (moved to kursus/bootcamp.blade.php)
+        return view('kursus.bootcamp');
     }
 }

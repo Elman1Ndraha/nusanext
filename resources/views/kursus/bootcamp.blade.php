@@ -1,15 +1,24 @@
+@extends('components.layout')
+
+@section('title', 'Kursus Online - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     🎓 BOOTCAMP PAGE - INTENSIVE PROGRAM
+     Halaman bootcamp dengan daftar program intensif dan manfaatnya
+     ============================================================ -->
 @php use App\Services\PageContentManager; @endphp
 <!-- BOOTCAMP Section -->
 <section id="bootcamp" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-16 scroll-fade">
-            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Bootcamp</h2>
+            <h2 class="font-display font-bold text-red-800 text-4xl md:text-5xl mb-4">Kursus Online</h2>
             <p class="text-gray-600 text-lg">Tingkatkan keterampilan Anda dengan program intensif kami</p>
             <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-teal-600 mx-auto mt-6"></div>
         </div>
         
-        <!-- Bootcamp Content -->
+        {{-- <!-- Bootcamp Content -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <!-- Image -->
             <div class="scroll-fade">
@@ -97,4 +106,8 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+<!-- ============================================================
+     END BOOTCAMP PAGE CONTENT
+     ============================================================ -->
+@endsection

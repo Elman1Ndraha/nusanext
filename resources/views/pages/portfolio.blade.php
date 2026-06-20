@@ -1,3 +1,12 @@
+@extends('components.layout')
+
+@section('title', 'Portfolio - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     🎨 PORTFOLIO PAGE - PROJECT SHOWCASE
+     Halaman portfolio dengan daftar project, kategori, dan filter
+     ============================================================ -->
 @php use App\Services\PageContentManager; @endphp
 
 <!-- PORTFOLIO Section -->
@@ -188,3 +197,7 @@
         });
     });
 </script>
+<!-- ============================================================
+     END PORTFOLIO PAGE CONTENT
+     ============================================================ -->
+@endsection

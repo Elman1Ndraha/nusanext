@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 sticky-header border-b border-gray-300">
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fixed-header border-b border-gray-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <!-- Logo & Brand -->
@@ -55,20 +55,15 @@
             aria-hidden="true"
             class="absolute left-0 top-full mt-2 w-56 rounded-xl shadow-xl z-60 transform scale-95 opacity-0 pointer-events-none transition-all duration-150">
 
-            <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-900 rounded-xl overflow-hidden">
-                <a href="{{ route('kursus') }}"
+            <div class="bg-yellow-50 border-l-4 border-green-400 text-red-900 rounded-xl overflow-hidden">
+                <a href="{{ route('index') }}"
                     class="block px-4 py-3 hover:bg-yellow-100">
-                    Kursus Online
+                    Harga Website
                 </a>
 
                 <a href="{{ route('bootcamp') }}"
                     class="block px-4 py-3 hover:bg-yellow-100">
-                    Bootcamp
-                </a>
-
-                <a href="{{ route('portfolio') }}"
-                    class="block px-4 py-3 hover:bg-yellow-100 border-t border-yellow-100">
-                    Lihat Portfolio
+                    Kursus Online
                 </a>
             </div>
 
@@ -109,11 +104,11 @@
                 <details class="px-4 py-3">
                     <summary class="font-medium text-gray-700 cursor-pointer hover:text-red-600 transition">Program</summary>
                     <div class="mt-2 space-y-2 ml-2">
-                        <a href="{{ route('kursus') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
-                            📚 Kursus Online
+                        <a href="{{ route('index') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
+                            Kursus Online
                         </a>
                         <a href="{{ route('bootcamp') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
-                            🚀 Bootcamp
+                            Bootcamp
                         </a>
                     </div>
                 </details>
@@ -151,20 +146,48 @@
         color: #af1e1e;
     }
 
+    /* Header fixed di semua ukuran: supaya konten berjalan di belakang header */
     header {
-        overflow-x: hidden;
-        max-width: 100vw;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: rgba(255,255,255,0.96);
+        backdrop-filter: blur(8px);
     }
 
     .max-w-7xl,
     .flex.justify-between.items-center.h-20,
     .relative#programMenuWrapper {
         min-width: 0;
+        overflow: visible;
+    }
+
+    #programMenuWrapper {
+        position: relative;
+        overflow: visible;
+    }
+
+    #programDropdown {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 0.5rem);
+        z-index: 9999;
+        overflow: visible;
+        width: auto;
+        min-width: 14rem;
+        transform-origin: top left;
     }
 
     /* Program dropdown show/hide helpers */
-    #programDropdown {
-        transform-origin: top left;
+    #programDropdown.show {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: scale(1) !important;
     }
 
     #programDropdown.show {

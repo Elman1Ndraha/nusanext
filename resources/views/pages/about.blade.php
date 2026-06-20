@@ -1,17 +1,28 @@
+@extends('components.layout')
+
+@section('title', 'About - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     📖 ABOUT PAGE - COMPANY INFORMATION
+     Halaman tentang kami yang menampilkan informasi perusahaan,
+     nilai-nilai, statistik, dan tim profesional
+     ============================================================ -->
+
 @php use App\Services\PageContentManager; @endphp
 
 <!-- ABOUT Section -->
 <section id="about" class="py-8 md:py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
+        <!-- Header: Judul bagian dengan styling -->
         <div class="text-center mb-12 scroll-fade">
             <h2 class="font-display text-red-800 font-bold text-4xl md:text-5xl mb-4">{{ PageContentManager::get('about', 'about_heading') }}</h2>
             <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-teal-600 mx-auto"></div>
         </div>
         
-        <!-- Main Content -->
+        <!-- Main Content Grid: Konten utama dengan gambar dan teks -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
-            <!-- Image -->
+            <!-- Image Column: Gambar tentang kami -->
             <div class="scroll-fade">
                 <div class="relative">
                     <div class="absolute inset-0 bg-linear-to-br from-blue-300 to-teal-300 rounded-2xl transform rotate-3 opacity-20"></div>
@@ -21,6 +32,7 @@
                             <img src="{{ asset('storage/' . $aboutImage) }}" alt="About Image" class="w-full h-full object-cover" />
                         </div>
                     @else
+                        <!-- Fallback placeholder jika tidak ada gambar -->
                         <div class="relative bg-linear-to-br from-gray-100 to-gray-50 rounded-2xl p-12 text-center">
                             <div class="text-8xl mb-6">👥</div>
                             <p class="text-gray-600 font-semibold">Tim Profesional & Berpengalaman</p>
@@ -29,7 +41,7 @@
                 </div>
             </div>
             
-            <!-- Content -->
+            <!-- Text Content: Paragraf deskripsi dan statistik -->
             <div class="scroll-fade">
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
                     {{ PageContentManager::get('about', 'about_paragraph_1') }}
@@ -41,16 +53,19 @@
                     {{ PageContentManager::get('about', 'about_paragraph_3') }}
                 </p>
                 
-                <!-- Stats -->
+                <!-- Stats Grid: Menampilkan statistik perusahaan -->
                 <div class="grid grid-cols-3 gap-6">
+                    <!-- Stat 1 -->
                     <div class="text-center">
                         <div class="text-3xl font-bold text-blue-600">{{ PageContentManager::get('about', 'about_stat_1_value') }}</div>
                         <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_1_label') }}</p>
                     </div>
+                    <!-- Stat 2 -->
                     <div class="text-center">
                         <div class="text-3xl font-bold text-teal-600">{{ PageContentManager::get('about', 'about_stat_2_value') }}</div>
                         <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_2_label') }}</p>
                     </div>
+                    <!-- Stat 3 -->
                     <div class="text-center">
                         <div class="text-3xl font-bold text-blue-600">{{ PageContentManager::get('about', 'about_stat_3_value') }}</div>
                         <p class="text-gray-600 text-sm mt-2">{{ PageContentManager::get('about', 'about_stat_3_label') }}</p>
@@ -59,33 +74,34 @@
             </div>
         </div>
         
-        <!-- Values Section -->
+        <!-- Values Section: Menampilkan nilai-nilai perusahaan -->
         <div class="mb-20">
             <h3 class="font-display font-bold text-3xl text-center mb-12 scroll-fade">Nilai-Nilai Kami</h3>
             
+            <!-- Values Grid: 4 value cards dengan style berbeda -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Value 1 -->
+                <!-- Value 1: Fokus -->
                 <div class="p-8 rounded-xl text-center text-white scroll-fade hover:shadow-lg transition" style="background: linear-gradient(to bottom right, #6e3434, #6e3434);">
                     <div class="text-5xl mb-4">🎯</div>
                     <h4 class="font-bold text-lg mb-3">Fokus</h4>
                     <p class="text-sm">Fokus pada hasil dan kepuasan klien adalah prioritas utama kami.</p>
                 </div>
                 
-                <!-- Value 2 -->
+                <!-- Value 2: Inovasi -->
                 <div class="p-8 bg-linear-to-br from-teal-50 to-teal-100 rounded-xl text-center scroll-fade hover:shadow-lg transition">
                     <div class="text-5xl mb-4">💡</div>
                     <h4 class="font-bold text-lg mb-3">Inovasi</h4>
                     <p class="text-gray-700 text-sm">Kami terus berinovasi untuk menghadirkan solusi terdepan.</p>
                 </div>
                 
-                <!-- Value 3 -->
+                <!-- Value 3: Kerjasama -->
                 <div class="p-8 rounded-xl text-center text-white scroll-fade hover:shadow-lg transition" style="background: linear-gradient(to bottom right, #346e34, #346e34);">
                     <div class="text-5xl mb-4">🤝</div>
                     <h4 class="font-bold text-lg mb-3">Kerjasama</h4>
                     <p class="text-sm">Kami bermitra dengan klien untuk mencapai kesuksesan bersama.</p>
                 </div>
                 
-                <!-- Value 4 -->
+                <!-- Value 4: Kualitas -->
                 <div class="p-8 bg-linear-to-br from-teal-50 to-teal-100 rounded-xl text-center scroll-fade hover:shadow-lg transition">
                     <div class="text-5xl mb-4">⭐</div>
                     <h4 class="font-bold text-lg mb-3">Kualitas</h4>
@@ -95,3 +111,7 @@
         </div>
     </div>
 </section>
+<!-- ============================================================
+     END ABOUT PAGE CONTENT
+     ============================================================ -->
+@endsection

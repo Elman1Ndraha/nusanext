@@ -8,7 +8,7 @@
 @include('pages.about')
 @include('pages.portfolio')
 @include('pages.bootcamp')
-@include('pages.kursus')
+@include('pages.index')
 @include('pages.testimonial')
 @include('pages.contact')
 @endsection

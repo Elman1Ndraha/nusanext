@@ -1,3 +1,12 @@
+@extends('components.layout')
+
+@section('title', 'Contact - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     ✉️ CONTACT PAGE - HUBUNGI KAMI
+     Halaman kontak dengan form, informasi kontak, dan peta lokasi
+     ============================================================ -->
 @php use App\Services\PageContentManager; @endphp
 
 <!-- CONTACT Section -->
@@ -179,3 +188,7 @@
         });
     }
 </script>
+<!-- ============================================================
+     END CONTACT PAGE CONTENT
+     ============================================================ -->
+@endsection

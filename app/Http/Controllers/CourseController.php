@@ -7,10 +7,12 @@ use Illuminate\View\View;
 class CourseController extends Controller
 {
     /**
-     * Display the course section
+     * Display the course/kursus page
+     * 📚 Route: GET /program/kursus -> Halaman daftar kursus online dengan kategori
      */
     public function index(): View
     {
-        return view('index', ['section' => 'course']);
+        // ✨ Return kursus page standalone (moved to kursus/index.blade.php)
+        return view('kursus.index');
     }
 }

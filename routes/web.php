@@ -12,7 +12,7 @@ use App\Http\Controllers\CourseController; // Import CourseController
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
-Route::get('/program/kursus', [CourseController::class, 'index'])->name('kursus');
+Route::get('/program/index', [CourseController::class, 'index'])->name('index');
 Route::get('/program/bootcamp', [BootcampController::class, 'index'])->name('bootcamp');
 Route::get('/testimonial', [HomeController::class, 'testimonial'])->name('testimonial');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');

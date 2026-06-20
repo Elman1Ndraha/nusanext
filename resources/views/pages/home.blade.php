@@ -1,6 +1,15 @@
-<!-- HERO SECTION -->
-<section id="home" class="relative py-20 md:py-28 text-black bg-white">
+@extends('components.layout')
 
+@section('title', 'Home - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     🏠 HOME PAGE - HERO SECTION
+     Halaman utama dengan hero section, deskripsi, dan call-to-action
+     ============================================================ -->
+<section id="home" class="relative overflow-hidden py-20 md:py-28 text-black bg-white">
+    <!-- Animated hero gradient background -->
+    <div class="absolute inset-0 -z-10 hero-animated-gradient"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- GRID -->
@@ -9,25 +18,25 @@
             <!-- LEFT CONTENT -->
             <div class="scroll-fade">
 
-                <!-- TITLE -->
+                <!-- TITLE: Judul utama yang menarik perhatian -->
                 <h1 class="font-display font-bold text-red-800 text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
                     {{ \App\Services\PageContentManager::get('home', 'hero_title') }}
                 </h1>
 
-                <!-- DESCRIPTION -->
+                <!-- DESCRIPTION: Sub-judul dengan penjelasan singkat -->
                 <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl">
                     {{ \App\Services\PageContentManager::get('home', 'hero_description') }}
                 </p>
 
-                <!-- BUTTON GROUP -->
+                <!-- BUTTON GROUP: Tombol CTA (Call To Action) -->
                 <div class="flex flex-col sm:flex-row gap-4">
 
-                    <!-- WHATSAPP BUTTON -->
+                    <!-- WHATSAPP BUTTON: Direct contact via WhatsApp -->
                     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', \App\Services\PageContentManager::get('home', 'whatsapp_number')) }}"
                        target="_blank"
                        class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-1">
 
-                        <!-- ICON -->
+                        <!-- WHATSAPP ICON -->
                         <svg xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 32 32"
                              class="w-5 h-5 fill-current">
@@ -39,8 +48,8 @@
                         </span>
                     </a>
 
-                    <!-- LEARN MORE BUTTON -->
-                    <a href="#about"
+                    <!-- LEARN MORE BUTTON: Scroll ke halaman about -->
+                    <a href="{{ route('about') }}"
                        class="inline-flex items-center justify-center border-2 border-red-800 text-red-800 hover:bg-red-800 hover:text-white font-semibold py-3 px-6 rounded-xl transition duration-300 hover:-translate-y-1">
 
                         {{ \App\Services\PageContentManager::get('home', 'learn_more_label') }}
@@ -163,3 +172,30 @@
 
     </div>
 </section>
+
+<style>
+    .hero-animated-gradient {
+        background: radial-gradient(circle at top left, rgba(236, 72, 153, 0.24), transparent 28%),
+                    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.24), transparent 26%),
+                    linear-gradient(135deg, rgba(59, 130, 246, 0.20), rgba(16, 185, 129, 0.14), rgba(248, 113, 113, 0.16));
+        background-size: 300% 300%;
+        animation: heroGradient 14s ease infinite;
+    }
+
+    @keyframes heroGradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
+<!-- ============================================================
+     END HOME PAGE CONTENT
+     ============================================================ -->
+@endsection

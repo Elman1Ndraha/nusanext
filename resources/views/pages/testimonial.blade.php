@@ -1,3 +1,12 @@
+@extends('components.layout')
+
+@section('title', 'Testimonial - NusaNext')
+
+@section('content')
+<!-- ============================================================
+     💬 TESTIMONIAL PAGE - REVIEW DARI KLIEN
+     Halaman testimonial dengan carousel otomatis review klien
+     ============================================================ -->
 <section id="testimonial" class="py-20 bg-gray-25">
 
         
@@ -174,3 +183,7 @@
 
 </div>
 </section>
+<!-- ============================================================
+     END TESTIMONIAL PAGE CONTENT
+     ============================================================ -->
+@endsection

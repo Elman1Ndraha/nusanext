@@ -42,6 +42,36 @@
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            position: relative;
+            /* 🎯 Ensure body takes full viewport height untuk sticky footer layout */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8fafc;
+        }
+
+        /* Animated gradient background yang modern dan profesional */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(120deg, rgba(34, 197, 94, 0.18), rgba(59, 130, 246, 0.16), rgba(244, 63, 94, 0.14), rgba(14, 165, 233, 0.18));
+            background-size: 400% 400%;
+            filter: blur(40px);
+            animation: gradientFlow 18s ease infinite;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -50,6 +80,14 @@
         
         .sticky-header {
             animation: slideDown 0.5s ease-out;
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.96);
         }
         
         @keyframes slideDown {
@@ -84,10 +122,16 @@
             overflow-x: hidden;
         }
 
-        /* Ensure container utility doesn't force every element to shrink */
+        /* 🎯 Make sure max-w-7xl doesn't shrink incorrectly */
         .max-w-7xl {
             max-width: 100%;
-            overflow-x: hidden;
+            overflow: visible;
+        }
+
+        /* 🎯 Main content area grows to push footer to bottom if content is short */
+        main {
+            flex: 1;
+            width: 100%;
         }
 
         /* Custom scrollbar */
