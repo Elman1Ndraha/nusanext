@@ -105,10 +105,10 @@
                     <summary class="font-medium text-gray-700 cursor-pointer hover:text-red-600 transition">Program</summary>
                     <div class="mt-2 space-y-2 ml-2">
                         <a href="{{ route('index') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
-                            Kursus Online
+                            Harga Website
                         </a>
                         <a href="{{ route('bootcamp') }}" class="block px-3 py-2 rounded-lg font-medium text-gray-600 hover:text-red-600 transition">
-                            Bootcamp
+                            Kursus Online
                         </a>
                     </div>
                 </details>
