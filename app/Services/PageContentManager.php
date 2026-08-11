@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Services;
+use App\Models\PageContent;
+
+
 
 class PageContentManager
 {
@@ -23,6 +26,35 @@ class PageContentManager
                     ['key' => 'feature_2_description', 'label' => 'Deskripsi Fitur 2', 'type' => 'textarea', 'rows' => 2, 'default' => 'Kami memahami kebutuhan Anda dan memberikan solusi yang custom sesuai bisnis.'],
                     ['key' => 'feature_3_title', 'label' => 'Judul Fitur 3', 'type' => 'text', 'default' => 'Support 24/7'],
                     ['key' => 'feature_3_description', 'label' => 'Deskripsi Fitur 3', 'type' => 'textarea', 'rows' => 2, 'default' => 'Tim kami siap membantu Anda kapan saja, di mana saja dengan respons cepat.'],
+                    [
+                        'key' => 'hero_card_title',
+                        'label' => 'Judul Kartu Hero',
+                        'type' => 'text',
+                        'default' => 'Inovasi Digital',
+                    ],
+
+                    [
+                        'key' => 'hero_card_description',
+                        'label' => 'Deskripsi Kartu Hero',
+                        'type' => 'textarea',
+                        'rows' => 3,
+                        'default' => 'Transformasi bisnis Anda dengan teknologi modern, solusi digital kreatif, dan pengembangan sistem yang profesional.',
+                    ],
+
+                    [
+                        'key' => 'pricing_heading',
+                        'label' => 'Judul Paket Website',
+                        'type' => 'text',
+                        'default' => 'Paket Website',
+                    ],
+
+                    [
+                        'key' => 'pricing_description',
+                        'label' => 'Deskripsi Paket Website',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'default' => 'Mulai branding bisnismu dengan website profesional. Pilih paket yang paling sesuai dengan kebutuhanmu.',
+                    ],
                 ],
             ],
             'about' => [
@@ -121,26 +153,39 @@ class PageContentManager
     }
 
     public static function get(string $page, string $key, string $default = ''): string
-    {
-        $data = self::loadData();
-        if (isset($data[$page][$key])) {
-            return (string) $data[$page][$key];
-        }
+{
+    $content = PageContent::where('page', $page)
+        ->where('key', $key)
+        ->value('value');
 
-        return $default ?: self::getDefault($page, $key);
+    if ($content !== null) {
+        return (string) $content;
+    }
+
+    return $default ?: self::getDefault($page, $key);
     }
 
     public static function all(string $page): array
     {
-        $data = self::loadData();
-        return $data[$page] ?? [];
+        return PageContent::where('page', $page)
+        ->pluck('value', 'key')
+        ->toArray();
     }
 
     public static function savePage(string $page, array $values): void
     {
-        $data = self::loadData();
-        $data[$page] = array_merge($data[$page] ?? [], $values);
-        self::saveData($data);
+        foreach ($values as $key => $value) {
+            PageContent::updateOrCreate(
+             [
+                'page' => $page,
+                'key' => $key,
+             ],
+             [
+                'value' => $value,
+                'type' => 'text',
+            ]
+        );
+    }
     }
 
     protected static function getDefault(string $page, string $key): string

@@ -50,30 +50,6 @@
             background-color: #f8fafc;
         }
 
-        /* Animated gradient background yang modern dan profesional */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: linear-gradient(120deg, rgba(34, 197, 94, 0.18), rgba(59, 130, 246, 0.16), rgba(244, 63, 94, 0.14), rgba(14, 165, 233, 0.18));
-            background-size: 400% 400%;
-            filter: blur(40px);
-            animation: gradientFlow 18s ease infinite;
-        }
-
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
         }

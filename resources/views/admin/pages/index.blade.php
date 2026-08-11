@@ -1,4 +1,4 @@
-@extends('components.layout')
+@extends('components.admin-layout')
 
 @section('title', 'Kelola Halaman')
 

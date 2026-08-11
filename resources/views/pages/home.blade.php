@@ -77,13 +77,12 @@
 
                         <!-- TITLE -->
                         <h3 class="text-3xl font-bold text-red-800 mb-4">
-                            Inovasi Digital
+                            {{ \App\Services\PageContentManager::get('home', 'hero_card_title') }}
                         </h3>
 
                         <!-- DESCRIPTION -->
                         <p class="text-gray-600 leading-relaxed">
-                            Transformasi bisnis Anda dengan teknologi modern,
-                            solusi digital kreatif, dan pengembangan sistem yang profesional.
+                            {{ \App\Services\PageContentManager::get('home', 'hero_card_description') }}
                         </p>
 
                     </div>
@@ -97,8 +96,8 @@
 
 <section class="py-20 bg-gray-50">
     <div class="text-center mb-16">
-            <h2 class="font-display font-bold text-4xl md:text-5xl text-red-800 mb-4">Paket Website</h2>
-            <p class="text-gray-600 max-w-xl mx-auto">Mulai branding bisnismu dengan website profesional. Pilih paket yang paling sesuai dengan kebutuhanmu.</p>
+            <h2 class="font-display font-bold text-4xl md:text-5xl text-red-800 mb-4"> {{\App\Services\PageContentManager::get('home', 'pricing_heading')}}</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">{{ \App\Services\PageContentManager::get('home', 'pricing_description') }}</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-10xl mx-auto px-6 sm:px-12 lg:px-16 py-10">

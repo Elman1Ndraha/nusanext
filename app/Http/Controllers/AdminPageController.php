@@ -10,6 +10,7 @@ class AdminPageController extends Controller
     public function index()
     {
         $pages = PageContentManager::getSchema();
+
         return view('admin.pages.index', compact('pages'));
     }
 
@@ -22,6 +23,7 @@ class AdminPageController extends Controller
         }
 
         $content = PageContentManager::all($page);
+
         return view('admin.pages.edit', [
             'page' => $page,
             'schema' => $schema[$page],
@@ -38,6 +40,7 @@ class AdminPageController extends Controller
         }
 
         $rules = [];
+
         foreach ($schema[$page]['fields'] as $field) {
             if ($field['type'] === 'image') {
                 $rules[$field['key']] = 'nullable|image|max:4096';
@@ -49,22 +52,49 @@ class AdminPageController extends Controller
         $validated = $request->validate($rules);
 
         $saveData = [];
+
         foreach ($schema[$page]['fields'] as $field) {
+
+            // Jika field adalah gambar dan admin memilih gambar baru
             if ($field['type'] === 'image' && $request->hasFile($field['key'])) {
+
                 $image = $request->file($field['key']);
-                $filename = time() . '_' . preg_replace('/[^a-zA-Z0-9_\.-]/', '_', $image->getClientOriginalName());
-                $path = $image->storeAs('uploads/pages/' . $page, $filename, 'public');
+
+                $filename = time() . '_' .
+                    preg_replace(
+                        '/[^a-zA-Z0-9_\.-]/',
+                        '_',
+                        $image->getClientOriginalName()
+                    );
+
+                $path = $image->storeAs(
+                    'uploads/pages/' . $page,
+                    $filename,
+                    'public'
+                );
+
                 if ($path) {
                     $saveData[$field['key']] = $path;
                 }
+
+            // Jika field adalah teks
             } elseif ($field['type'] !== 'image') {
-                $saveData[$field['key']] = $validated[$field['key']] ?? '';
+
+                // Hanya simpan jika admin benar-benar mengisi field
+                if (
+                    array_key_exists($field['key'], $validated)
+                    && $validated[$field['key']] !== null
+                    && $validated[$field['key']] !== ''
+                ) {
+                    $saveData[$field['key']] = $validated[$field['key']];
+                }
             }
         }
 
         PageContentManager::savePage($page, $saveData);
 
-        return redirect()->route('admin.pages.edit', $page)
+        return redirect()
+            ->route('admin.pages.edit', $page)
             ->with('success', 'Konten halaman berhasil disimpan.');
     }
 }
